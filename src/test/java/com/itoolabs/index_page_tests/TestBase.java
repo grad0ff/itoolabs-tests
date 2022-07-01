@@ -5,16 +5,15 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
     @BeforeAll
     static void initTests() {
         Configuration.baseUrl = "https://itoolabs.com";
-        Configuration.holdBrowserOpen = true;
-        Configuration.browserPosition = "-1500x0";
+        Configuration.browserPosition = "2000x0";
+//        Configuration.holdBrowserOpen = true;
     }
 
     @BeforeEach
@@ -25,5 +24,6 @@ public class TestBase {
     @AfterAll
     static void finishTests() {
         closeWebDriver();
+        clearBrowserCookies();
     }
 }

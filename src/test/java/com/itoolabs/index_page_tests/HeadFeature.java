@@ -1,7 +1,5 @@
 package com.itoolabs.index_page_tests;
 
-import lombok.Getter;
-
 public enum HeadFeature {
     CALLCENTER("ОБЛАЧНЫЙ CALL-ЦЕНТР"),
     OFFICE("ВИРТУАЛЬНЫЙ ОФИС"),
@@ -9,13 +7,14 @@ public enum HeadFeature {
     SIP("ОБЛАЧНАЯ АТС"),
     NUMBER("ВИРТУАЛЬНЫЕ НОМЕРА");
 
-    @Getter
-    private String text;
+    private final String popupText;
 
-    HeadFeature(String s) {
+    HeadFeature(String popupText) {
+        this.popupText = popupText;
     }
 
-    public String getName() {
-        return this.text;
+    @Override
+    public String toString() {
+        return popupText;
     }
 }
