@@ -26,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Tag("index_page_positive_test")
 @Owner("a.gradov")
 @Link(name = "itoolabs.com", url = "https://itoolabs.com/")
-@Feature("Главная страница сайта")
+@Feature("Работа с главной страницей")
 @DisplayName("Позитивные тесты главной страницы сайта itoolabs.com")
 public class IndexPageTest extends TestBase {
 
@@ -38,7 +38,7 @@ public class IndexPageTest extends TestBase {
     @Description("Проверяется переход на главную страницу itoolabs.com при нажатии на логотип")
     @DisplayName("Тест ссылки в логотипе")
     void logoLinkTest() {
-        step("Открываем главную страницу в фоне в новой вкладке",
+        step("Открываем главную страницу в новой вкладке",
                 () -> $("a.logo").sendKeys(Keys.CONTROL, Keys.ENTER));
         step("Переходим на новую вкладку",
                 () -> switchTo().window(1));
@@ -49,10 +49,11 @@ public class IndexPageTest extends TestBase {
         );
     }
 
-    @ParameterizedTest(name = "Тест выбора текущей локали: {0}")
+    @ParameterizedTest
     @EnumSource(Locale.class)
     @Story("Пользователь меняет язык интерфейса")
     @Description("Проверяется возможность выбора локали и соответствие текста страницы выбранному языку")
+    @DisplayName("Тест выбора текущей локали: ")
     void setLocaleTest(Locale locale) {
         String localeName = locale.name().toLowerCase();
         step("Выставляем исходную локаль",
@@ -71,10 +72,11 @@ public class IndexPageTest extends TestBase {
                 () -> $(".copyright").shouldHave(text(locale.getAssertionText())));
     }
 
-    @ParameterizedTest(name = "Тест появления формы по клику на элементе: {0}")
+    @ParameterizedTest
     @EnumSource(HeadFeature.class)
     @Story("Пользователь выбрал в хэдере интересующую его тему ")
     @Description("Проверяется появление модального окна с формой запроса Demo-версии продукта по клику по услуге в хэдере")
+    @DisplayName("Тест появления формы по клику на элементе: ")
     void headerFeaturesTest(HeadFeature headFeature) {
         SelenideElement headFeatureElement = $("#" + headFeature.name().toLowerCase());
         step("Проверяем что у элемента изначально не виден попап",
@@ -104,11 +106,12 @@ public class IndexPageTest extends TestBase {
                 () -> $("#formPopUp").shouldBe(visible));
     }
 
-    @ParameterizedTest(name = "Тест появления формы по клику по кнопке на демолайне {index}")
+    @ParameterizedTest
     @ValueSource(strings = {"first", "second"})
     @Story("Пользователь решил приобрести Demo-версии продукта")
     @Description("Проверяется появление модального окна с формой запроса Demo-версии продукта по клику по кнопке на демолайне")
-    void demoLineLinksTest(String linkNum) {
+    @DisplayName("Тест появления формы по клику по кнопке на демолайне")
+    void demoLinesLinkTest(String linkNum) {
         step("Нажимаем на кнопку получения Demo-версии",
                 () -> $(String.format(".demoBuyButton.%s .buyDemo", linkNum)).click());
         step("Проверяем что форма появилась",
@@ -121,18 +124,23 @@ public class IndexPageTest extends TestBase {
     @Description("Проверяется корректность заполнения всех полей формы запроса Demo-версии продукта")
     @DisplayName("Тест всех полей формы")
     void demoFormFieldsTest() {
+        String name = faker.name().firstName();
+        String email = faker.internet().emailAddress();
+        String phone = faker.phoneNumber().subscriberNumber(10);
+        String company = faker.company().name();
+        String comment = faker.chuckNorris().fact();
+        Allure.parameter("Имя", name);
+        Allure.parameter("E-mail", email);
+        Allure.parameter("Телефон", phone);
+        Allure.parameter("Компания", company);
+        Allure.parameter("Комментарий", comment);
         step("Нажимаем на демолайне на кнопку получения Demo-версии ",
                 () -> $(".demoBuyButton.first .buyDemo").click());
-        step("Заполняем поле Имя",
-                () -> indexPage.demoForm.nameField.setValue(faker.name().firstName()));
-        step("Заполняем поле E-mail",
-                () -> indexPage.demoForm.emailField.setValue(faker.internet().emailAddress()));
-        step("Заполняем поле Телефон",
-                () -> indexPage.demoForm.phoneField.setValue(faker.phoneNumber().subscriberNumber(10)));
-        step("Заполняем поле Компания",
-                () -> indexPage.demoForm.companyField.setValue(faker.company().name()));
-        step("Заполняем поле Комментарий",
-                () -> indexPage.demoForm.commentsField.setValue(faker.chuckNorris().fact()));
+        indexPage.demoForm.setName("", name);
+        indexPage.demoForm.setEmail("", email);
+        indexPage.demoForm.setPhone("", phone);
+        indexPage.demoForm.setCompany("", company);
+        indexPage.demoForm.setComments("", comment);
         step("Проверяем что кнопка отправки формы активна",
                 () -> indexPage.demoForm.submitButton.hover().shouldBe(enabled));
         step("Проверяем что нет сообщения о необходимости заполнения обязательный полей",
@@ -166,6 +174,5 @@ public class IndexPageTest extends TestBase {
                 });
         step("Проверяем что отображается последняя новость из списка",
                 () -> assertThat($(".newSlider").lastChild().isDisplayed()).isTrue());
-
     }
 }

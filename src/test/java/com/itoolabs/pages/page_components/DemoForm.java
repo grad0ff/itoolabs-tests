@@ -1,7 +1,7 @@
 package com.itoolabs.pages.page_components;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.SetValueOptions;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -18,10 +18,37 @@ public class DemoForm {
     public SelenideElement submitButton = $("#formSendBTN");
     public SelenideElement requiredFieldsMessage = $("#formMsg");
 
-    public DemoForm fillnameField(Object object) {
-        nameField.sendKeys((CharSequence) object);
+    @Step("Вводим в поле Имя текст: {parameter}")
+    public DemoForm setName(String parameter, String value) {
+        nameField.setValue(value).pressTab();
         return this;
     }
 
+    @Step("Вводим в поле E-mail текст: {parameter}")
+    public DemoForm setEmail(String parameter, String value) {
+        emailField.setValue(value).pressTab();
+        return this;
+    }
 
+    @Step("Вводим в поле Телефон текст: {parameter}")
+    public DemoForm setPhone(String parameter, String value) {
+        phoneField.setValue(value);
+        return this;
+    }
+
+    @Step("Вводим в поле Компания текст: {parameter}")
+    public DemoForm setCompany(String parameter, String value) {
+        companyField.setValue(value).pressTab();
+        return this;
+    }
+
+    @Step("Вводим в поле текст: {parameter}")
+    public DemoForm setComments(String parameter, String value) {
+        commentsField.setValue(value).pressTab();
+        return this;
+    }
+
+//
+//    public void setRequiredFieldsMessage(SelenideElement requiredFieldsMessage) {
+//        this.requiredFieldsMessage = requiredFieldsMessage;
 }
