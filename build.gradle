@@ -31,13 +31,19 @@ dependencies {
     )
 }
 
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 tasks.withType(Test) {
+    systemProperty "file.encoding", "utf-8"
+    systemProperties(System.getProperties())
     useJUnitPlatform()
-//    testLogging {
-//        lifecycle {
-//            events 'started', 'skipped', 'failed', 'standard_error', 'standard_out'
-//            exceptionFormat 'short'
-//        }
-//    }
+    testLogging {
+        lifecycle {
+            events 'started', 'skipped', 'failed', 'standard_error', 'standard_out'
+            exceptionFormat 'short'
+        }
+    }
 }
