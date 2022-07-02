@@ -12,7 +12,7 @@ public class TestBase {
     @BeforeAll
     static void initTests() {
         Configuration.baseUrl = "https://itoolabs.com";
-        Configuration.browserPosition = "2000x0";
+        Configuration.browserPosition = "-1500x0";
 //        Configuration.holdBrowserOpen = true;
     }
 

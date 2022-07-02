@@ -7,7 +7,6 @@ import com.itoolabs.pages.page_components.DemoForm;
  */
 public class IndexPage {
 
-    public DemoForm getDemoForm = new DemoForm();
-
+    public DemoForm demoForm = new DemoForm();
 
 }

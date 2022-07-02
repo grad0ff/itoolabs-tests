@@ -21,12 +21,13 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.HoverOptions.withOffset;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
-@Tag("index_page")
+@Tag("index_page_positive_test")
 @Owner("a.gradov")
 @Link(name = "itoolabs.com", url = "https://itoolabs.com/")
-@DisplayName("Тесты главной страницы сайта itoolabs.com")
+@Feature("Главная страница сайта")
+@DisplayName("Позитивные тесты главной страницы сайта itoolabs.com")
 public class IndexPageTest extends TestBase {
 
     IndexPage indexPage = new IndexPage();
@@ -119,23 +120,23 @@ public class IndexPageTest extends TestBase {
     @Story("Пользователь заполняет форму для получения Demo-версии")
     @Description("Проверяется корректность заполнения всех полей формы запроса Demo-версии продукта")
     @DisplayName("Тест всех полей формы")
-    void getDemoFormTest() {
+    void demoFormFieldsTest() {
         step("Нажимаем на демолайне на кнопку получения Demo-версии ",
                 () -> $(".demoBuyButton.first .buyDemo").click());
         step("Заполняем поле Имя",
-                () -> indexPage.getDemoForm.nameField.setValue(faker.name().firstName()));
+                () -> indexPage.demoForm.nameField.setValue(faker.name().firstName()));
         step("Заполняем поле E-mail",
-                () -> indexPage.getDemoForm.email.setValue(faker.internet().emailAddress()));
+                () -> indexPage.demoForm.emailField.setValue(faker.internet().emailAddress()));
         step("Заполняем поле Телефон",
-                () -> indexPage.getDemoForm.phoneField.setValue(faker.phoneNumber().subscriberNumber(10)));
+                () -> indexPage.demoForm.phoneField.setValue(faker.phoneNumber().subscriberNumber(10)));
         step("Заполняем поле Компания",
-                () -> indexPage.getDemoForm.companyField.setValue(faker.company().name()));
+                () -> indexPage.demoForm.companyField.setValue(faker.company().name()));
         step("Заполняем поле Комментарий",
-                () -> indexPage.getDemoForm.commentsField.setValue(faker.chuckNorris().fact()));
+                () -> indexPage.demoForm.commentsField.setValue(faker.chuckNorris().fact()));
         step("Проверяем что кнопка отправки формы активна",
-                () -> indexPage.getDemoForm.submitButton.hover().shouldBe(enabled));
+                () -> indexPage.demoForm.submitButton.hover().shouldBe(enabled));
         step("Проверяем что нет сообщения о необходимости заполнения обязательный полей",
-                () -> indexPage.getDemoForm.requiredFieldsMessage.shouldNotBe(visible));
+                () -> indexPage.demoForm.requiredFieldsMessage.shouldNotBe(visible));
     }
 
     @Test
