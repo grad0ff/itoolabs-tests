@@ -13,7 +13,8 @@ import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.itoolabs.VideoAttachHandler.addVideoAttach;
+import static com.itoolabs.utils.VideoAttachHandler.addVideoAttach;
+import static com.itoolabs.utils.VideoAttachHandler.setTestStartTimestamp;
 
 public class TestBase {
 
@@ -36,6 +37,7 @@ public class TestBase {
     @BeforeEach
     void prepareTest() {
         open("/");
+        setTestStartTimestamp();
     }
 
     @AfterEach
