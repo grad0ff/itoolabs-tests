@@ -48,3 +48,14 @@ tasks.withType(Test) {
     }
 }
 
+task indexPageTest(type: Test) {
+    useJUnitPlatform {
+        includeTags "index_page_positive_test"
+    }
+}
+
+task demoFormTest(type: Test) {
+    useJUnitPlatform {
+        includeTags "demo_form_negative_test"
+    }
+}
