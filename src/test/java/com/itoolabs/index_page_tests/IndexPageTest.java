@@ -43,9 +43,9 @@ public class IndexPageTest extends TestBase {
         step("Переходим на новую вкладку",
                 () -> switchTo().window(1));
         step("Проверяем что открылась главная страница",
-                () -> assertThat(WebDriverRunner.url()).isEqualTo(
-                        Configuration.baseUrl + String.format("/%s/", $(".lang .selected").getOwnText())
-                )
+                () -> assertThat(WebDriverRunner.url()).isBetween(
+                        Configuration.baseUrl,
+                        Configuration.baseUrl + String.format("/%s/", $(".lang .selected").getOwnText()))
         );
     }
 

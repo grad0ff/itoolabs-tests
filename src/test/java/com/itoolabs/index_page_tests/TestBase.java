@@ -18,15 +18,12 @@ public class TestBase {
         Configuration.baseUrl = "https://itoolabs.com";
         SelenideLogger.addListener("allure", new AllureSelenide());
         setRemoteWebdriver();
-
     }
 
     @BeforeEach
     void prepareTest() {
         open("/");
-
     }
-
 
     @AfterAll
     static void finishTests() {
