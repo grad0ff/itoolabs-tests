@@ -45,12 +45,12 @@ public class TestBase {
 
     }
 
-    @AfterAll
-    static void finishTests() {
-        closeWebDriver();
-        clearBrowserCookies();
-
-    }
+//    @AfterAll
+//    static void finishTests() {
+//        closeWebDriver();
+//        clearBrowserCookies();
+//
+//    }
 
     static void setRemoteWebdriver() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
