@@ -7,7 +7,7 @@
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="Intelij IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/></a>
 <a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/></a>
-<a href="https://junit.org/junit5/"><img alt="JUnit5" height="50" src="external/technologies/JUnit5.svg" width="50"/></a>
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/></a>
 <a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/></a>
 <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="external/technologies/Selenoid.svg" width="50"/></a>
 <a href="https://gradle.org/"><img alt="Gradle" height="50" src="external/technologies/Gradle.svg" width="50"/></a>
@@ -39,17 +39,15 @@
 > генерируемых псевдослучайно для каждого повтора теста, что минимизирует влияние "эффекта пестицида" на 
 > качество тестирования_
 
-## Команды запуска тестов
+## Команды запуска тестов :computer:
 ```sh
 gradle clean
 ```
 Команды запуска тестов из терминала с пояснением ключей
-
-  ___
   
-## Скриншоты
+## Скриншоты :camera_flash:
   
-### Java, JUnit5, Selenide
+#### <a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
  > _для оформления кода автотестов_
   
 ```java
@@ -120,7 +118,7 @@ public class ExampleTest extends TestBase {
 }
 ```
   
-### Selenoid
+#### <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="external/technologies/Selenoid.svg" width="50"/>Selenoid</a>
 > _для прогона нагруженных автоестов на удаленном сервере_
   
 <video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4" 
@@ -128,7 +126,7 @@ public class ExampleTest extends TestBase {
 Видео не доступно для этого браузера
 </video>
 
-### Gradle
+#### <a href="https://gradle.org/"><img alt="Gradle" height="50" src="external/technologies/Gradle.svg" width="50"/>Gradle</a>
 > _для автоматической сборки и управления проектом на ПК_
   
 ```groovy
@@ -177,15 +175,17 @@ task demoFormTest(type: Test) {
     }
 }
 ```
- 
-### Jenkins
+####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
+
 > _для решения задач по сборке проекта, прогону автотестов, получению отчетов и отправкеи уведомлений по результатам сборки_
   
-### Allure
+#### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
+
 > _для создания отчетов по результам проведенных автотестов_
 # ссылка на отчет в сборке Jenkins
   
-### Telegram
+#### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
+
 > _для получения уведомлений о результатах прогона тестов_
 # скриншот чата
 
