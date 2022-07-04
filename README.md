@@ -5,7 +5,7 @@
 
 ## Cтек технологий :hammer_and_wrench:
 <div align="center">
-<a href="https://www.jetbrains.com/idea/"><img alt="Intelij IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/></a>
+<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/></a>
 <a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/></a>
 <a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/></a>
 <a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/></a>
@@ -18,7 +18,6 @@
 </div>
 
 ## Объекты тестирования :mag:
-
 - **_Главная страница сайта_**
 
 Разработаны автотесты проверок таких элементов как: 
@@ -46,8 +45,7 @@ gradle clean
 Команды запуска тестов из терминала с пояснением ключей
   
 ## Скриншоты :camera_flash:
-  
-#### <a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
+#### <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/>InteliJ IDEA</a><a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
  > _для оформления кода автотестов_
   
 ```java
@@ -175,20 +173,15 @@ task demoFormTest(type: Test) {
     }
 }
 ```
-####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
 
+####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
 > _для решения задач по сборке проекта, прогону автотестов, получению отчетов и отправкеи уведомлений по результатам сборки_
+# ссылка на сборку Jenkins
   
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
-
 > _для создания отчетов по результам проведенных автотестов_
 # ссылка на отчет в сборке Jenkins
   
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
-
 > _для получения уведомлений о результатах прогона тестов_
 # скриншот чата
-
-
-
-- Иконки используемого стека для красоты
