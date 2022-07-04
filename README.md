@@ -1,13 +1,9 @@
-# ITooLabs. Проект автотестов 
+# ITooLabs. Автотесты на Java
 <a href="https://itoolabs.com/"><img alt="ITooLabs" height="50" src="external/logo.png"/></a>
-___
-___
-### Содержание
 
-___
+## Содержание :bookmark_tabs:
 
-### Cтек технологий
-
+## Cтек технологий :hammer_and_wrench:
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="Intelij IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/></a>
 <a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/></a>
@@ -21,33 +17,41 @@ ___
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/></a>
 </div>
 
-___
+## Объекты тестирования :mag:
 
-### Объекты тестирования
-- **_Главная страница сайта_** (ссылка на Github)
+- **_Главная страница сайта_**
 
 Разработаны автотесты проверок таких элементов как: 
-ссылка на главную страницу в лого
-элементы выбора текущей локали
-элементы списка основных услуг в хэдере
-различные ссылки на форму запроса Demo-версии продукта
-поля формы (позитивный сценарий)
-кнопки прокрутки ленты новостей.
+:white_check_mark: ссылка на главную страницу в лого
+:white_check_mark: элементы выбора текущей локали
+:white_check_mark: элементы списка основных услуг в хэдере
+:white_check_mark: различные ссылки на форму запроса Demo-версии продукта
+:white_check_mark: поля формы (позитивный сценарий)
+:white_check_mark: кнопки прокрутки ленты новостей.
 
-- **_Форма запроса Demo-версии продукта_** (ссылка на Github)
+- **_Форма запроса Demo-версии продукта_**
 
 Разработаны автотесты с негативными сценариями для проверок: 
-отдельных полей формы
-возможности отправки формы на сервер с невалидными данными.
+:white_check_mark: каждого отдельного поля формы
+:white_check_mark: возможности отправки формы на сервер с невалидными данными.
 
-Одной из особенностей разработанных автотестов является использование валидных данных для заполнения полей формы, генерируемых в случайном порядке для каждого повтора теста, что минимизирует влияние "эффекта пестицида" на качество тестов.
-___
-### Команды запуска тестов
-<gradle clean>
+> _Одной из особенностей разработанных автотестов является использование валидных данных для заполнения полей формы, 
+> генерируемых псевдослучайно для каждого повтора теста, что минимизирует влияние "эффекта пестицида" на 
+> качество тестирования_
+
+## Команды запуска тестов
+```sh
+gradle clean
+```
 Команды запуска тестов из терминала с пояснением ключей
+
+  ___
   
-### Скриншоты
-#### Java, JUnit5, Selenide
+## Скриншоты
+  
+### Java, JUnit5, Selenide
+ > _для оформления кода автотестов_
+  
 ```java
 @Tag("index_page_positive_test")
 @Owner("a.gradov")
@@ -116,23 +120,75 @@ public class ExampleTest extends TestBase {
 }
 ```
   
-#### Selenoid
-<video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4" controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/Itoolabs/blob/master/external/technologies/Selenoid.svg">
+### Selenoid
+> _для прогона нагруженных автоестов на удаленном сервере_
+  
+<video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4" 
+       controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/Itoolabs/blob/master/external/technologies/Selenoid.svg">
 Видео не доступно для этого браузера
 </video>
+
+### Gradle
+> _для автоматической сборки и управления проектом на ПК_
   
-#### Gradle
+```groovy
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.10.0'
+}
 
-#### Jenkins
+repositories {
+    mavenCentral()
+}
 
-#### Allure
+allure {
+    report {
+        version.set('2.18.1')
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set('2.18.1')
+            }
+        }
+    }
+}
 
-#### GitHub
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.8.2',
+            'com.codeborne:selenide:6.6.5',
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.assertj:assertj-core:3.23.1',
+            'io.qameta.allure:allure-selenide:2.18.1',
+            'org.slf4j:slf4j-simple:1.7.36')
+}
 
-#### Telegram
+task indexPageTest(type: Test) {
+    useJUnitPlatform {
+        includeTags "index_page_positive_test"
+    }
+}
+
+task demoFormTest(type: Test) {
+    useJUnitPlatform {
+        includeTags "demo_form_negative_test"
+    }
+}
+```
+ 
+### Jenkins
+> _для решения задач по сборке проекта, прогону автотестов, получению отчетов и отправкеи уведомлений по результатам сборки_
+  
+### Allure
+> _для создания отчетов по результам проведенных автотестов_
+# ссылка на отчет в сборке Jenkins
+  
+### Telegram
+> _для получения уведомлений о результатах прогона тестов_
+# скриншот чата
 
 
 
 - Иконки используемого стека для красоты
-- Сделайте джобу в Jenkins, добавьте Allure отчёт, уведомления в чат Telegram, Selenoid.
-- Оформите всё со скриншотами в readme.md
