@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>build.gradle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+.s0 { color: #ebebeb;}
+.s1 { color: #54b33e;}
+.s2 { color: #ed864a;}
+
+    </style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060">
+    <tr>
+        <td>
+            <center>
+                <font face="Arial, Helvetica" color="#000000">
+                    build.gradle</font>
+            </center>
+        </td>
+    </tr>
+</table>
+
+<pre><span class="s0">plugins {</span>
+    <span class="s0">id </span><span class="s1">'java'</span>
+    <span class="s0">id </span><span class="s1">'io.qameta.allure' </span><span class="s0">version </span><span
+            class="s1">'2.10.0'</span>
+<span class="s0">}</span>
+
+<span class="s0">repositories {</span>
+    <span class="s0">mavenCentral()</span>
+<span class="s0">}</span>
+
+<span class="s0">allure {</span>
+    <span class="s0">report {</span>
+        <span class="s0">version.set(</span><span class="s1">'2.18.1'</span><span class="s0">)</span>
+    <span class="s0">}</span>
+    <span class="s0">adapter {</span>
+        <span class="s0">aspectjWeaver.set(</span><span class="s2">true</span><span class="s0">)</span>
+        <span class="s0">frameworks {</span>
+            <span class="s0">junit5 {</span>
+                <span class="s0">adapterVersion.set(</span><span class="s1">'2.18.1'</span><span class="s0">)</span>
+            <span class="s0">}</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">dependencies {</span>
+    <span class="s0">testImplementation(</span>
+            <span class="s1">'org.junit.jupiter:junit-jupiter:5.8.2'</span><span class="s0">,</span>
+            <span class="s1">'com.codeborne:selenide:6.6.5'</span><span class="s0">,</span>
+            <span class="s1">'com.github.javafaker:javafaker:1.0.2'</span><span class="s0">,</span>
+            <span class="s1">'org.assertj:assertj-core:3.23.1'</span><span class="s0">,</span>
+            <span class="s1">'io.qameta.allure:allure-selenide:2.18.1'</span><span class="s0">,</span>
+            <span class="s1">'org.slf4j:slf4j-simple:1.7.36'</span><span class="s0">)</span>
+<span class="s0">}</span>
+
+<span class="s0">task indexPageTest(type: Test) {</span>
+    <span class="s0">useJUnitPlatform {</span>
+        <span class="s0">includeTags </span><span class="s1">&quot;index_page_positive_test&quot;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">task demoFormTest(type: Test) {</span>
+    <span class="s0">useJUnitPlatform {</span>
+        <span class="s0">includeTags </span><span class="s1">&quot;demo_form_negative_test&quot;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>

@@ -136,11 +136,12 @@ public class IndexPageTest extends TestBase {
         Allure.parameter("Комментарий", comment);
         step("Нажимаем на демолайне на кнопку получения Demo-версии ",
                 () -> $(".demoBuyButton.first .buyDemo").click());
-        indexPage.demoForm.setName("", name);
-        indexPage.demoForm.setEmail("", email);
-        indexPage.demoForm.setPhone("", phone);
-        indexPage.demoForm.setCompany("", company);
-        indexPage.demoForm.setComments("", comment);
+        indexPage.demoForm
+                .setName("", name)
+                .setEmail("", email)
+                .setPhone("", phone)
+                .setCompany("", company)
+                .setComments("", comment);
         step("Проверяем что кнопка отправки формы активна",
                 () -> indexPage.demoForm.submitButton.hover().shouldBe(enabled));
         step("Проверяем что нет сообщения о необходимости заполнения обязательный полей",

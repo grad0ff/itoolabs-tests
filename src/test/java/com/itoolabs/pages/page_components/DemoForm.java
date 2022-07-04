@@ -32,7 +32,7 @@ public class DemoForm {
 
     @Step("Вводим в поле Телефон текст: {parameter}")
     public DemoForm setPhone(String parameter, String value) {
-        phoneField.setValue(value);
+        phoneField.setValue(value).pressTab();
         return this;
     }
 
@@ -47,8 +47,4 @@ public class DemoForm {
         commentsField.setValue(value).pressTab();
         return this;
     }
-
-//
-//    public void setRequiredFieldsMessage(SelenideElement requiredFieldsMessage) {
-//        this.requiredFieldsMessage = requiredFieldsMessage;
 }
