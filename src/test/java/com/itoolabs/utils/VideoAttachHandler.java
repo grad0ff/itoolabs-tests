@@ -33,7 +33,7 @@ public class VideoAttachHandler {
         return timeFormatter.format(offset);
     }
 
-    @Attachment(value = "Video [{timestamp}]", type = "text/html", fileExtension = ".html")
+    @Attachment(value = "Video [timecode {timestamp}]", type = "text/html", fileExtension = ".html")
     private static String addVideo(String timestamp) {
         String sessionId = getSessionId();
         URL videoUrl = getVideoUrl(sessionId);
