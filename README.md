@@ -39,10 +39,17 @@
 > качество тестирования_
 
 ## Команды запуска тестов :computer:
-```sh
-gradle clean
+```bash
+gradle clean test
+-D${BROWSER}
+-D${WINDOWSIZE} 
+-D${REMOTEDRIVER}
 ```
-Команды запуска тестов из терминала с пояснением ключей
+> `-D${BROWSER}` - браузер (по умолчанию `chrome`)
+> 
+> `-D${WINDOWSIZE}` - размер окна браузера (по умолчанию `1366x768`)
+> 
+> `-D${REMOTEDRIVER}` - подключение удаленного браузера для тестов (по умолчанию `false`)
   
 ## Скриншоты :camera_flash:
 #### <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/>InteliJ IDEA</a><a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
@@ -175,13 +182,14 @@ task demoFormTest(type: Test) {
 ```
 
 ####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
-> _для решения задач по сборке проекта, прогону автотестов, получению отчетов и отправкеи уведомлений по результатам сборки_
+> _для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправкеи уведомлений по результатам сборки_
 # ссылка на сборку Jenkins
   
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
 > _для создания отчетов по результам проведенных автотестов_
 # ссылка на отчет в сборке Jenkins
-  
+> Из за особенности работы с Selenoid, заключающейся в получении только одного видеопотока на всю сессию (т.е. тестран), реализовано добавление в отчете в название видеофайла  определенной метки времени. Она соответствует началу каждого проваленного теста, что значительно облегчает навигацию при просмотре.
+
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
 > _для получения уведомлений о результатах прогона тестов_
 # скриншот чата
