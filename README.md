@@ -20,11 +20,11 @@
 ## Объекты тестирования :mag:
 - **_Главная страница сайта_**
 
-Разработаны автотесты проверок таких элементов как: 
+Разработаны автотесты для проверок таких элементов как: 
 :white_check_mark: ссылка на главную страницу в лого
 :white_check_mark: элементы выбора текущей локали
 :white_check_mark: элементы списка основных услуг в хэдере
-:white_check_mark: различные ссылки на форму запроса Demo-версии продукта
+:white_check_mark: ссылки на форму запроса Demo-версии продукта
 :white_check_mark: поля формы (позитивный сценарий)
 :white_check_mark: кнопки прокрутки ленты новостей.
 
@@ -40,16 +40,19 @@
 
 ## Команды запуска тестов :computer:
 ```bash
-gradle clean test
--D${BROWSER}
--D${WINDOWSIZE} 
--D${REMOTEDRIVER}
+gradle clean 
+${TESTNAME}
+-Dbrowser=${BROWSER}
+-DwindowSize=${WINDOWSIZE} 
+-DremoteWebDriver=${REMOTEDRIVER}
 ```
-> `-D${BROWSER}` - браузер (по умолчанию `chrome`)
+> `${TESTNAME}` - имя задачи из [*build.gradle*](build.gradle) [  *test* <sub>(default)</sub> , *indexPageTest* , *demoFormTest* ]
 > 
-> `-D${WINDOWSIZE}` - размер окна браузера (по умолчанию `1366x768`)
+> `${BROWSER}` - браузер [ *firefox* , *chrome* <sub>(default)</sub> ]
 > 
-> `-D${REMOTEDRIVER}` - подключение удаленного браузера для тестов (по умолчанию `false`)
+> `${WINDOWSIZE}` - размер окна браузера [ *1024x768* , *1366x768* <sub>(default)</sub> , *1366x768* ]
+> 
+> `${REMOTEDRIVER}` - подключение удаленного браузера для тестов [ *false* , *true* <sub>(default)</sub> ]
   
 ## Скриншоты :camera_flash:
 #### <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/>InteliJ IDEA</a><a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
@@ -124,7 +127,7 @@ public class ExampleTest extends TestBase {
 ```
   
 #### <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="external/technologies/Selenoid.svg" width="50"/>Selenoid</a>
-> _для прогона нагруженных автоестов на удаленном сервере_
+> _для прогона нагруженных автотестов на удаленном сервере_
   
 <video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4" 
        controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/Itoolabs/blob/master/external/technologies/Selenoid.svg">
@@ -132,7 +135,7 @@ public class ExampleTest extends TestBase {
 </video>
 
 #### <a href="https://gradle.org/"><img alt="Gradle" height="50" src="external/technologies/Gradle.svg" width="50"/>Gradle</a>
-> _для автоматической сборки и управления проектом на ПК_
+> _для автоматической сборки и управления проектом на локальном ПК_
   
 ```groovy
 plugins {
@@ -182,14 +185,17 @@ task demoFormTest(type: Test) {
 ```
 
 ####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
-> _для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправкеи уведомлений по результатам сборки_
-# ссылка на сборку Jenkins
-  
+> _для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки_
+
+<a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-small-project/20/">
+<img src="https://user-images.githubusercontent.com/72714071/177297936-683da1a4-54b6-4d8f-ba47-3cd3b90ee097.png">
+</a> 
+ 
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
-> _для создания отчетов по результам проведенных автотестов_
+> _для формирования отчетов по результам проведенных автотестов_
 # ссылка на отчет в сборке Jenkins
 > Из за особенности работы с Selenoid, заключающейся в получении только одного видеопотока на всю сессию (т.е. тестран), реализовано добавление в отчете в название видеофайла  определенной метки времени. Она соответствует началу каждого проваленного теста, что значительно облегчает навигацию при просмотре.
 
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
-> _для получения уведомлений о результатах прогона тестов_
+> _для оперативного получения уведомлений о результатах прогона тестов_
 # скриншот чата
