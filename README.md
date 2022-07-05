@@ -22,8 +22,6 @@
   + <a href="#allure">Allure</a>
   + <a href="#telegram">Telegram</a>
 
-
-
 <a id="stack"></a>
 ## Cтек технологий :hammer_and_wrench:
 <div align="center">
@@ -82,7 +80,7 @@ ${TESTNAME}
 ## Скриншоты :camera_flash:
 <a id="ijjs"></a>
 #### <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/>InteliJ IDEA</a><a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
-> *для оформления кода автотестов*
+> *Оформление кода автотестов*
 
 ```java
 @Tag("index_page_positive_test")
@@ -154,7 +152,7 @@ public class ExampleTest extends TestBase {
 
 <a id="selenoid"></a>
 #### <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="external/technologies/Selenoid.svg" width="50"/>Selenoid</a>
-> *для прогона нагруженных автотестов на удаленном сервере*
+> *Прогон ресурсоемких автотестов на удаленном сервере*
 
 <video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4"
 controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/Itoolabs/blob/master/external/technologies/Selenoid.svg">
@@ -163,7 +161,7 @@ controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff
 
 <a id="gradle"></a>
 #### <a href="https://gradle.org/"><img alt="Gradle" height="50" src="external/technologies/Gradle.svg" width="50"/>Gradle</a>
-> *для автоматической сборки и управления проектом на локальном ПК*
+> *Автоматическая сборка проекта и управление зависимостями*
 
 ```groovy
 plugins {
@@ -214,7 +212,7 @@ task demoFormTest(type: Test) {
 
 <a id="jenkins"></a>
 ####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
-> *для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки*
+> *Решение комплекса задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки*
 
   
 <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/">
@@ -223,7 +221,7 @@ task demoFormTest(type: Test) {
 
 <a id="allure"></a>
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
-> *для формирования отчетов по результам проведенных автотестов*
+> *Формирование сводного отчета по результам автотестов*
 
 <table>
     <tr>
@@ -258,6 +256,6 @@ task demoFormTest(type: Test) {
 
 <a id="telegram"></a>
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
-> *для оперативного получения уведомлений о результатах прогона тестов*
+> *Оперативное предоставление информации о результатах прогона автотестов*
 
 ![Telegram](https://user-images.githubusercontent.com/72714071/177325044-c147556f-d2d6-498b-8397-bb016aa9927d.png)
