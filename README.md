@@ -3,10 +3,32 @@
 
 ## Содержание :bookmark_tabs:
 
-<a name="твоё_название">
-## Cтек технологий :hammer_and_wrench:
+<a href="#stack">Cтек технологий :hammer_and_wrench:</a>
+
+<a href="#object">Объекты тестирования :mag:</a>
+
+<a href="#console">Команды запуска тестов :computer:</a>
+
+<a href="#screenshot">Скриншоты :camera_flash:</a>
+
+<a href="#ijjs">
+  InteliJ IDEA<img alt="InteliJ IDEA" src="external/technologies/Intelij_IDEA.svg" height="25" width="25"/>
+  Java<img alt="Java" src="external/technologies/Java.svg" height="25" width="25"/>
+  JUnit 5<img alt="JUnit 5" src="external/technologies/JUnit5.svg" height="25" width="25"/>
+  Selenide<img alt="Selenide" src="external/technologies/Selenide.svg" height="25" width="25"/>
 </a>
 
+<a href="#selenoid">Selenoid<img alt="Selenoid" src="external/technologies/Selenoid.svg" height="25" width="50"/></a>
+
+<a href="#gradle">Gradle<img alt="Gradle" src="external/technologies/Gradle.svg" height="25" width="50"/></a>
+
+<a href="#jenkins">Jenkins<img alt="Jenkins" src="external/technologies/Jenkins.svg" height="25" width="50"/></a>
+
+<a href="#allure">Allure<img alt="Allure" src="external/technologies/Allure.svg" height="25" width="50"/></a>
+
+<a href="#telegram">Telegram<img alt="Telegram" src="external/technologies/Telegram.svg" height="25" width="50"/></a>
+
+<a id="stack"></a>
 ## Cтек технологий :hammer_and_wrench:
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/></a>
@@ -21,10 +43,11 @@
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/></a>
 </div>
 
+<a id="object"></a>
 ## Объекты тестирования :mag:
 - **_Главная страница сайта_**
 
-Разработаны автотесты для проверок таких элементов как: 
+Разработаны автотесты для проверок таких элементов как:
 :white_check_mark: ссылка на главную страницу в лого
 :white_check_mark: элементы выбора текущей локали
 :white_check_mark: элементы списка основных услуг в хэдере
@@ -34,14 +57,15 @@
 
 - **_Форма запроса Demo-версии продукта_**
 
-Разработаны автотесты с негативными сценариями для проверок: 
+Разработаны автотесты с негативными сценариями для проверок:
 :white_check_mark: каждого отдельного поля формы
 :white_check_mark: возможности отправки формы на сервер с невалидными данными.
 
-> _Одной из особенностей разработанных автотестов является использование валидных данных для заполнения полей формы, 
-> генерируемых псевдослучайно для каждого повтора теста, что минимизирует влияние "эффекта пестицида" на 
+> _Одной из особенностей разработанных автотестов является использование валидных данных для заполнения полей формы,
+> генерируемых псевдослучайно для каждого повтора теста, что минимизирует влияние "эффекта пестицида" на
 > качество тестирования_
 
+<a id="console"></a>
 ## Команды запуска тестов :computer:
 ```bash
 gradle clean 
@@ -51,17 +75,19 @@ ${TESTNAME}
 -DremoteWebDriver=${REMOTEDRIVER}
 ```
 > `${TESTNAME}` - имя задачи из [*build.gradle*](build.gradle) [  *test* <sub>(default)</sub> , *indexPageTest* , *demoFormTest* ]
-> 
+>
 > `${BROWSER}` - браузер [ *firefox* , *chrome* <sub>(default)</sub> ]
-> 
+>
 > `${WINDOWSIZE}` - размер окна браузера [ *1024x768* , *1366x768* <sub>(default)</sub> , *1366x768* ]
-> 
+>
 > `${REMOTEDRIVER}` - подключение удаленного браузера для тестов [ *false* , *true* <sub>(default)</sub> ]
-  
+
+<a id="screenshot"></a>
 ## Скриншоты :camera_flash:
+<a id="ijjs"></a>
 #### <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/>InteliJ IDEA</a><a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
- > _для оформления кода автотестов_
-  
+> _для оформления кода автотестов_
+
 ```java
 @Tag("index_page_positive_test")
 @Owner("a.gradov")
@@ -129,18 +155,20 @@ public class ExampleTest extends TestBase {
     }
 }
 ```
-  
+
+<a id="selenoid"></a>
 #### <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="external/technologies/Selenoid.svg" width="50"/>Selenoid</a>
 > _для прогона нагруженных автотестов на удаленном сервере_
-  
-<video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4" 
-       controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/Itoolabs/blob/master/external/technologies/Selenoid.svg">
+
+<video src="https://user-images.githubusercontent.com/72714071/177209634-f8b6ae6c-90ca-4b47-84b3-8199a3347a36.mp4"
+controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/Itoolabs/blob/master/external/technologies/Selenoid.svg">
 Видео не доступно для этого браузера
 </video>
 
+<a id="gradle"></a>
 #### <a href="https://gradle.org/"><img alt="Gradle" height="50" src="external/technologies/Gradle.svg" width="50"/>Gradle</a>
 > _для автоматической сборки и управления проектом на локальном ПК_
-  
+
 ```groovy
 plugins {
     id 'java'
@@ -188,10 +216,11 @@ task demoFormTest(type: Test) {
 }
 ```
 
+<a id="jenkins"></a>
 ####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
 > _для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки_
 
-
+<a id="allure"></a>
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
 > _для формирования отчетов по результам проведенных автотестов_
 
@@ -201,6 +230,7 @@ task demoFormTest(type: Test) {
 
 > Из за особенности работы с Selenoid, заключающейся в получении только одного видеопотока на всю сессию (т.е. тестран), реализовано добавление в отчете в название видеофайла  определенной метки времени. Она соответствует началу каждого проваленного теста, что значительно облегчает навигацию при просмотре.
 
+<a id="telegram"></a>
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
 > _для оперативного получения уведомлений о результатах прогона тестов_
 # скриншот чата
