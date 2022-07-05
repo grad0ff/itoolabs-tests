@@ -31,7 +31,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("windowSize", "1366x768");
         Configuration.baseUrl = "https://itoolabs.com";
-        if (System.getProperty("remoteDriver", "false").equals("true")) {setRemoteWebdriver();}
+        if (System.getProperty("remoteWebDriver", "true").equals("true")) {setRemoteWebdriver();}
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
