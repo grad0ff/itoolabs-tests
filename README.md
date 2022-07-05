@@ -1,5 +1,5 @@
-# ITooLabs. Автотесты на Java
 <a href="https://itoolabs.com/"><img alt="ITooLabs" height="50" src="external/logo.png"/></a>
+# ITooLabs. Автотесты на Java
 
 ## Содержание :bookmark_tabs:
 
@@ -9,7 +9,7 @@
 
 * <a href="#console">Команды запуска тестов</a>
 
-* <a href="#screenshot">Скриншоты</a>
+* <a href="#screenshot">Скриншоты и видео</a>
 
   + <a href="#ijjs">InteliJ IDEA, Java, JUnit 5, Selenide</a>
 
@@ -23,24 +23,6 @@
   + <a href="#telegram">Telegram</a>
 
 
-<table>
-    <tr>
-        <td>
-        <img src="https://user-images.githubusercontent.com/72714071/177333637-beabaa93-b50e-414e-a879-7a2c3ecdef56.png">
-        </td>
-        <td>
-        <img src="https://user-images.githubusercontent.com/72714071/177332881-fcefcefe-eb14-41a1-baab-70c52ffb344c.png">
-        </td>
-    </tr>
-        <tr>
-        <td>
-        <img src="https://user-images.githubusercontent.com/72714071/177333506-c7517b6e-7c80-4600-970c-21e36a38bb1d.png">
-        </td>
-        <td>
-        <img src="">
-        </td>
-    </tr>
-</table>
 
 <a id="stack"></a>
 ## Cтек технологий :hammer_and_wrench:
@@ -234,20 +216,48 @@ task demoFormTest(type: Test) {
 ####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
 > *для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки*
 
+  
+<a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/">
+<img src="https://user-images.githubusercontent.com/72714071/177363720-95c14959-fac7-4af4-9145-eb1987631229.png" alt="Jenkins">
+</a>
+
 <a id="allure"></a>
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
 > *для формирования отчетов по результам проведенных автотестов*
 
-<a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/1/allure/">
-<img src="https://user-images.githubusercontent.com/72714071/177305487-395e6be8-7ed4-43ff-ae36-765279f3caa2.png">
-</a>
+<table>
+    <tr>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#">
+        <img src="https://user-images.githubusercontent.com/72714071/177333637-beabaa93-b50e-414e-a879-7a2c3ecdef56.png">
+        </a>
+        </td>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/ab463357776f237c/">
+        <img src="https://user-images.githubusercontent.com/72714071/177332881-fcefcefe-eb14-41a1-baab-70c52ffb344c.png">
+        </a>
+        </td>
+    </tr>
+        <tr>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#behaviors">
+        <img src="https://user-images.githubusercontent.com/72714071/177333506-c7517b6e-7c80-4600-970c-21e36a38bb1d.png">
+        </a>
+        </td>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/ab463357776f237c/">
+        <img src="https://user-images.githubusercontent.com/72714071/177361087-a7047f2e-c7e1-4291-a255-5b189c40a0d2.png"></img>*
+        </a>
+        </td>
+    </tr>
+</table>
 
-> *Из за особенности работы с Selenoid, заключающейся в получении только одного видеопотока на всю сессию (т.е. тестран), 
-реализовано добавление в отчете в название видеофайла  определенной метки времени. Она соответствует началу каждого проваленного теста, 
-что значительно облегчает навигацию при просмотре*
+> *\* Из за особенности работы с Selenoid, заключающейся в предоставлении одного видеопотока на все тесты в пределах тестрана, реализовано
+автоматическое добавление в название видеофайла в отчете определенной метки времени. Она соответствует началу каждого проваленного теста, что
+значительно облегчает навигацию по видео при изучении причины падения*
 
 <a id="telegram"></a>
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
 > *для оперативного получения уведомлений о результатах прогона тестов*
 
-![Notification](https://user-images.githubusercontent.com/72714071/177325044-c147556f-d2d6-498b-8397-bb016aa9927d.png)
+![Telegram](https://user-images.githubusercontent.com/72714071/177325044-c147556f-d2d6-498b-8397-bb016aa9927d.png)
