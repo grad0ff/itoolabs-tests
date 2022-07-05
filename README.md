@@ -3,6 +3,10 @@
 
 ## Содержание :bookmark_tabs:
 
+<a name="твоё_название">
+## Cтек технологий :hammer_and_wrench:
+</a>
+
 ## Cтек технологий :hammer_and_wrench:
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/></a>
@@ -187,13 +191,14 @@ task demoFormTest(type: Test) {
 ####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/technologies/Jenkins.svg" width="50"/>Jenkins</a>
 > _для решения последовательных задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки_
 
-<a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-small-project/20/">
-<img src="https://user-images.githubusercontent.com/72714071/177297936-683da1a4-54b6-4d8f-ba47-3cd3b90ee097.png">
-</a> 
- 
+
 #### <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/technologies/Allure.svg" width="50"/>Allure</a>
 > _для формирования отчетов по результам проведенных автотестов_
-# ссылка на отчет в сборке Jenkins
+
+<a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/1/allure/">
+<img src="https://user-images.githubusercontent.com/72714071/177305487-395e6be8-7ed4-43ff-ae36-765279f3caa2.png">
+</a>
+
 > Из за особенности работы с Selenoid, заключающейся в получении только одного видеопотока на всю сессию (т.е. тестран), реализовано добавление в отчете в название видеофайла  определенной метки времени. Она соответствует началу каждого проваленного теста, что значительно облегчает навигацию при просмотре.
 
 #### <a href="https://telegram.org/"><img alt="Telegram" height="50" src="external/technologies/Telegram.svg" width="50"/>Telegram</a>
