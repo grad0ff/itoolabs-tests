@@ -3,30 +3,25 @@
 
 ## Содержание :bookmark_tabs:
 
-<a href="#stack">Cтек технологий :hammer_and_wrench:</a>
+<a href="#stack">1. Cтек технологий :hammer_and_wrench:</a>
 
-<a href="#object">Объекты тестирования :mag:</a>
+<a href="#object">2. Объекты тестирования :mag:</a>
 
-<a href="#console">Команды запуска тестов :computer:</a>
+<a href="#console">3. Команды запуска тестов :computer:</a>
 
-<a href="#screenshot">Скриншоты :camera_flash:</a>
+<a href="#screenshot">4. Скриншоты :camera_flash:</a>
 
 <a href="#ijjs">
-  InteliJ IDEA<img alt="InteliJ IDEA" src="external/technologies/Intelij_IDEA.svg" height="25" width="25"/>
-  Java<img alt="Java" src="external/technologies/Java.svg" height="25" width="25"/>
-  JUnit 5<img alt="JUnit 5" src="external/technologies/JUnit5.svg" height="25" width="25"/>
-  Selenide<img alt="Selenide" src="external/technologies/Selenide.svg" height="25" width="25"/>
+  - InteliJ IDEA <img alt="InteliJ IDEA" src="external/technologies/Intelij_IDEA.svg" height="20" width="20"/>
+  Java<img alt="Java" src="external/technologies/Java.svg" height="20" width="20"/>
+  JUnit 5 <img alt="JUnit 5" src="external/technologies/JUnit5.svg" height="20" width="20"/>
+  Selenide <img alt="Selenide" src="external/technologies/Selenide.svg" height="20" width="20"/>
 </a>
-
-<a href="#selenoid">Selenoid<img alt="Selenoid" src="external/technologies/Selenoid.svg" height="25" width="50"/></a>
-
-<a href="#gradle">Gradle<img alt="Gradle" src="external/technologies/Gradle.svg" height="25" width="50"/></a>
-
-<a href="#jenkins">Jenkins<img alt="Jenkins" src="external/technologies/Jenkins.svg" height="25" width="50"/></a>
-
-<a href="#allure">Allure<img alt="Allure" src="external/technologies/Allure.svg" height="25" width="50"/></a>
-
-<a href="#telegram">Telegram<img alt="Telegram" src="external/technologies/Telegram.svg" height="25" width="50"/></a>
+<a href="#selenoid">- Selenoid <img alt="Selenoid" src="external/technologies/Selenoid.svg" height="20" width="20"/></a>
+<a href="#gradle">- Gradle <img alt="Gradle" src="external/technologies/Gradle.svg" height="20" width="20"/></a>
+<a href="#jenkins">- Jenkins <img alt="Jenkins" src="external/technologies/Jenkins.svg" height="20" width="20"/></a>
+<a href="#allure">- Allure <img alt="Allure" src="external/technologies/Allure.svg" height="20" width="20"/></a>
+<a href="#telegram">- Telegram <img alt="Telegram" src="external/technologies/Telegram.svg" height="20" width="20"/></a>
 
 <a id="stack"></a>
 ## Cтек технологий :hammer_and_wrench:
