@@ -248,6 +248,18 @@ task demoFormTest(type: Test) {
         </a>
         </td>
     </tr>
+    <tr>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/8d36d319e2132404/">
+        <img src="https://user-images.githubusercontent.com/72714071/177543609-abcd962c-f5e8-4d0c-9e85-423901e7b0f5.png">
+        </a>
+        </td>
+        <td>
+        <a href="">
+        <img src="https://user-images.githubusercontent.com/72714071/177543805-4028d54c-4654-43b3-b052-9af01cf8e243.png">
+        </a>
+        </td>
+    </tr>
 </table>
 
 > *\* Из за особенности работы с Selenoid, заключающейся в предоставлении одного видеопотока на все тесты в пределах тестрана, реализовано
