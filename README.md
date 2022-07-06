@@ -63,18 +63,18 @@
 ## Команды запуска тестов :computer:
 ```bash
 gradle clean 
-${TESTNAME}
+${TEST_NAME}
 -Dbrowser=${BROWSER}
--DwindowSize=${WINDOWSIZE} 
--DremoteWebDriver=${REMOTEDRIVER}
+-DwindowSize=${WINDOW_SIZE} 
+-DremoteWebDriver=${REMOTE_DRIVER}
 ```
-> `${TESTNAME}` - имя задачи из [*build.gradle*](build.gradle) [  *test* <sub>(default)</sub> , *indexPageTest* , *demoFormTest* ]
+> `${TEST_NAME}` - имя задачи из [*build.gradle*](build.gradle) [  *test* <sub>(default)</sub> , *indexPageTest* , *demoFormTest* ]
 >
 > `${BROWSER}` - браузер [ *firefox* , *chrome* <sub>(default)</sub> ]
 >
-> `${WINDOWSIZE}` - размер окна браузера [ *1024x768* , *1366x768* <sub>(default)</sub> , *1366x768* ]
+> `${WINDOW_SIZE}` - размер окна браузера [ *1024x768* , *1366x768* <sub>(default)</sub> , *1366x768* ]
 >
-> `${REMOTEDRIVER}` - подключение удаленного браузера для тестов [ *false* , *true* <sub>(default)</sub> ]
+> `${REMOTE_DRIVER}` - подключение удаленного браузера для тестов [ *false* , *true* <sub>(default)</sub> ]
 
 <a id="screenshot"></a>
 ## Скриншоты :camera_flash:
@@ -244,7 +244,7 @@ task demoFormTest(type: Test) {
         </td>
         <td>
         <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/ab463357776f237c/">
-        <img src="https://user-images.githubusercontent.com/72714071/177361087-a7047f2e-c7e1-4291-a255-5b189c40a0d2.png"></img>*
+        <img src="https://user-images.githubusercontent.com/72714071/177361087-a7047f2e-c7e1-4291-a255-5b189c40a0d2.png">*
         </a>
         </td>
     </tr>
