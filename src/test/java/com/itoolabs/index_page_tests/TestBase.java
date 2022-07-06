@@ -14,8 +14,7 @@ import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.itoolabs.utils.VideoAttachHandler.addVideoAttach;
-import static com.itoolabs.utils.VideoAttachHandler.setTestStartTimestamp;
+import static com.itoolabs.utils.VideoAttachHandler.*;
 
 public class TestBase {
 
@@ -25,6 +24,8 @@ public class TestBase {
         @Override
         public void testFailed(ExtensionContext context, Throwable cause) {
             TestWatcher.super.testFailed(context, cause);
+            addLogs();
+            addScreenshot();
             addVideoAttach();
         }
     };
@@ -50,13 +51,6 @@ public class TestBase {
     void finishTest() {
 
     }
-
-//    @AfterAll
-//    static void finishTests() {
-//        closeWebDriver();
-//        clearBrowserCookies();
-//
-//    }
 
     static void setRemoteWebdriver() {
         DesiredCapabilities capabilities = new DesiredCapabilities();

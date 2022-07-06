@@ -1,6 +1,10 @@
 package com.itoolabs.utils;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -9,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class VideoAttachHandler {
 
@@ -23,6 +28,16 @@ public class VideoAttachHandler {
         }
     }
 
+    @Attachment(value = "Log", type = "text/plain")
+    public static String addLogs() {
+        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
+    }
+
+    @Attachment(value = "Screenshot ", type = "image/png", fileExtension = ".png")
+    public static byte[] addScreenshot() {
+        return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
+    }
+
     public static void addVideoAttach() {
         String offsetTime = getTimeOffset();
         addVideo(offsetTime);
@@ -33,7 +48,7 @@ public class VideoAttachHandler {
         return timeFormatter.format(offset);
     }
 
-    @Attachment(value = "Video [timecode {timestamp}]", type = "text/html", fileExtension = ".html")
+    @Attachment(value = "Video [timecode ~{timestamp}]", type = "text/html", fileExtension = ".html")
     private static String addVideo(String timestamp) {
         String sessionId = getSessionId();
         URL videoUrl = getVideoUrl(sessionId);
