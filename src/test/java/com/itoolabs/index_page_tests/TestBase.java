@@ -5,7 +5,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import config.CredentialsConfig;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -13,12 +12,15 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Map;
+
 import static com.codeborne.selenide.Selenide.open;
 import static com.itoolabs.utils.VideoAttachHandler.*;
 
 public class TestBase {
 
     static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+
     @RegisterExtension
     public TestWatcher testWatcher = new TestWatcher() {
         @Override
@@ -47,17 +49,13 @@ public class TestBase {
         setTestStartTimestamp();
     }
 
-    @AfterEach
-    void finishTest() {
-
-    }
-
     static void setRemoteWebdriver() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
-                credentialsConfig.login(), credentialsConfig.password());
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 }
