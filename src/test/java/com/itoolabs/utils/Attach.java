@@ -15,7 +15,7 @@ import java.util.Date;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
-public class VideoAttachHandler {
+public class Attach {
 
     private static final SimpleDateFormat timeFormatter = new SimpleDateFormat("mm:ss");
     private static long startTimestamp;

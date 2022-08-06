@@ -15,7 +15,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.itoolabs.utils.VideoAttachHandler.*;
+import static com.itoolabs.utils.Attach.*;
 
 public class TestBase {
 
