@@ -77,7 +77,7 @@ ${TEST_NAME}
 > `${REMOTE_DRIVER}` - подключение удаленного браузера для тестов [ *false* , *true* <sub>(default)</sub> ]
 
 <a id="screenshot"></a>
-## Скриншоты :camera_flash:
+## Код и отчётность :camera_flash:
 <a id="ijjs"></a>
 #### <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="external/technologies/Intelij_IDEA.svg" width="50"/>InteliJ IDEA</a><a href="https://www.java.com/"><img alt="Java" height="50" src="external/technologies/Java.svg" width="50"/>Java</a><a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/technologies/JUnit5.svg" width="50"/>JUnit 5</a><a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/technologies/Selenide.svg" width="50"/>Selenide</a>
 > *Оформление кода автотестов*
